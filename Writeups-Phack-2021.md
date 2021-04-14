@@ -5,6 +5,8 @@
 
 ## Military grade password 
 
+On passe le fichier *login* via son désassembleur préféré et on obtient un système d'équations à 19 inconnus et 21 équations :
+
 ```
 
 int sub_1530(char *a)
