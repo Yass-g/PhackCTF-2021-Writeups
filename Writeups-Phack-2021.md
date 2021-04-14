@@ -90,7 +90,7 @@ On obtient les caractères en décimal de l'identifiant:
 
 
 ## Android Cloud
-On a acces à un écran de déverouillage de type pattern lock d'android. On voit sur la page qu'on a un backup fait à une date donnée qu'on peut le télécharger grâce à l'indication du code php gracieusement donné. Une fois le backup obtenu, on peut récupérer la lock sequence hashée en SHA1 dans le fichier gesture.key dans le dossier /data/system. On brute force et on trouve la séquence qui permet de dévérouiller le lock et d'obtenir le flag. 
+On a acces à un écran de déverouillage de type pattern lock d'android. On voit sur la page qu'on a un backup fait à une date donnée qu'on peut alors télécharger grâce à l'indication du code php gracieusement donné. Une fois le backup obtenu, on peut récupérer la lock sequence hashée en SHA1 dans le fichier gesture.key dans le dossier /data/system. On brute force et on trouve la séquence qui permet de dévérouiller le lock et d'obtenir le flag. 
 ## Git de France
 On a un git, et le flag est caché dans un des commits.
 Heureusement, une commande permet de chercher un texte dans tous les commits : 
