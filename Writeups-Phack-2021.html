@@ -34,7 +34,8 @@
 </head>
 
 <body>
-    <div id="doc" class="markdown-body container-fluid"><h1 id="Notes-pour-le-P’Hack"><a class="anchor hidden-xs" href="#Notes-pour-le-P’Hack" title="Notes-pour-le-P’Hack"><i class="fa fa-link"></i></a>Notes pour le P’Hack</h1><h6 id="tags-HackX-CTF-PHack"><a class="anchor hidden-xs" href="#tags-HackX-CTF-PHack" title="tags-HackX-CTF-PHack"><i class="fa fa-link"></i></a>tags: <code>HackX</code> <code>CTF</code> <code>P'Hack</code></h6><h2 id="Military-grade-password"><a class="anchor hidden-xs" href="#Military-grade-password" title="Military-grade-password"><i class="fa fa-link"></i></a>Military grade password</h2><pre><code>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="Notes-pour-le-P’Hack"><a class="anchor hidden-xs" href="#Notes-pour-le-P’Hack" title="Notes-pour-le-P’Hack"><i class="fa fa-link"></i></a>Notes pour le P’Hack</h1><h6 id="tags-HackX-CTF-PHack"><a class="anchor hidden-xs" href="#tags-HackX-CTF-PHack" title="tags-HackX-CTF-PHack"><i class="fa fa-link"></i></a>tags: <code>HackX</code> <code>CTF</code> <code>P'Hack</code></h6><h2 id="Military-grade-password"><a class="anchor hidden-xs" href="#Military-grade-password" title="Military-grade-password"><i class="fa fa-link"></i></a>Military grade password</h2>
+<p>On passe le fichier login via son désassembleur préféré et on obtient un système d'équations à 19 inconnus et 21 équations :</p><pre><code>
 int sub_1530(char *a)
 {
   if ( a[14] * a[6] * (a[13] ^ (a[12] - a[10])) == 16335 )
@@ -125,7 +126,7 @@ with open("DISK1.bin", "rb") as f1:
                    off= (off + 2)%3
                    x = (x - 1) % 3
                    f_out.write( b"".join(data_blocks) )
-</code></pre><p>On obtient alors DISK qui n’est autre qu’un png. Je le passe par aperisolve et obtient (BINWALK) plusieurs jpg et png. Dans l’un deux on peut voir le flag</p><h2 id="Piraterie-EP1"><a class="anchor hidden-xs" href="#Piraterie-EP1" title="Piraterie-EP1"><i class="fa fa-link"></i></a>Piraterie EP1</h2><p>Dans un premier temps :<br>
+</code></pre><p>On obtient alors DISK qui n’est autre qu’un png. Je le passe par aperisolve et obtient (BINWALK) plusieurs jpg et png. Dans l’un d'eux on peut voir le flag</p><h2 id="Piraterie-EP1"><a class="anchor hidden-xs" href="#Piraterie-EP1" title="Piraterie-EP1"><i class="fa fa-link"></i></a>Piraterie EP1</h2><p>Dans un premier temps :<br>
 <em>volatility imageinfo -f dump.raw</em></p><p>On apprend que le dump vient d’un Windows 7</p><p><em>volatility consoles --profile=Win7SP1x86 -f dump.raw</em></p><p><strong>PHACK{STEP_1-IC4nD0Wh4TuD0}</strong></p><h2 id="Piraterie-EP2"><a class="anchor hidden-xs" href="#Piraterie-EP2" title="Piraterie-EP2"><i class="fa fa-link"></i></a>Piraterie EP2</h2><p>Dans EP1 on remarque Wallpaper.jpg :<br>
 <em>volatility  --profile=Win7SP1x86 -f dump.raw filescan | grep “jpg”</em></p><p>On obtient que le fond d’écran est en 0x000000007d10b440, donc :<br>
 <em>volatility  --profile=Win7SP1x86 -f dump.raw dumpfiles -Q 0x000000007d10b440 -D dmp/</em></p><p>On obtient une image avec le flag</p><h2 id="Piraterie-EP3"><a class="anchor hidden-xs" href="#Piraterie-EP3" title="Piraterie-EP3"><i class="fa fa-link"></i></a>Piraterie EP3</h2><p><em>volatility netscan --profile=Win7SP1x86 -f dump.raw</em></p><p>On remarque que powershell communique avec 185.13.37.99:1337 :</p><p>On convertit ip:port en base64:</p><p><strong>PHACK{MTg1LjEzLjM3Ljk5OjEzMzc=}</strong></p><h2 id="Hello-World"><a class="anchor hidden-xs" href="#Hello-World" title="Hello-World"><i class="fa fa-link"></i></a>Hello World</h2><p>On arrive sur un site web, qui nous indique où regarder.<br>
