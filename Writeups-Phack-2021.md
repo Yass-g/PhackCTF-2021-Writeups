@@ -127,7 +127,7 @@ with open("DISK1.bin", "rb") as f1:
                    x = (x - 1) % 3
                    f_out.write( b"".join(data_blocks) )
 ```
-On obtient alors DISK qui n'est autre qu'un png. Je le passe par aperisolve et obtient (BINWALK) plusieurs jpg et png. Dans l'un deux on peut voir le flag
+On obtient alors DISK qui n'est autre qu'un png. Je le passe par aperisolve et obtient (BINWALK) plusieurs jpg et png. Dans l'un d'eux on peut voir le flag
 
 
 
@@ -137,7 +137,7 @@ On obtient alors DISK qui n'est autre qu'un png. Je le passe par aperisolve et o
 Dans un premier temps : 
 *volatility imageinfo -f dump.raw*
 
-On apprend que le dump vient d'un Windows 7
+On apprend que le dump vient d'un Windows 7. Ensuite, on vérifie l'état de la console, où on trouve le flag écrit en clair.
 
 *volatility consoles --profile=Win7SP1x86 -f dump.raw*
 
