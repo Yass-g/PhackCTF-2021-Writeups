@@ -367,7 +367,6 @@ J'ai codé un vieux trucs en JS qui lance une fonction toutes les secondes, réc
 ## Strong Daddy
 Texte traduit en alphabet phonétique de l'OTAN plusieurs fois. Le traduire (en plusieurs passes) permet d'obtenir le flag.
 
-## Caumunikassion
 ## Chasse aux oeufs
 Les 14 oeufs ne sont pas durs à trouver, mais qu'en faire. Binwalk ne donne rien, Aperisolve non plus.
 
@@ -377,7 +376,6 @@ Chaque oeuf a une couleur de fond codée sur 3 octets qui correspondent chacun �
 ## Alter Egg-o
 Il s'agit d'un png dont le magic number a été modifié par *deadbeef*, il suffit de rétablir le 89 50 4E 47 et on obtient une image où on peut lirele flag.
 
-## Cracky
 ## Etsy
 On a un hash du mot de passe de différents utilisateurs, celui qui nous intéresse est Phackito. On nous a fourni une liste à utiliser pour cracker le mot de passe. On fait tourner john avec cette wordlist et on obtient le password.
 **PHACK{murder}**
@@ -395,8 +393,6 @@ En passant par https://hashes.com/en/decrypt/hash, on obtient directement le mdp
 
 **PHACK{Tesla1971}**
 
-## Guacamole
-## Enchaîné
 ## H3lp
 C'est du L33t Sp34k hardcore
 En fait c'était du LSPK90H, une variante du leet speak où les caractères subissent une rotation de 90 de degrés.
@@ -428,33 +424,7 @@ Trouver le github de johnny weak, lire le bash history puis connection ssh => fl
 
 ## X-sière ##
 
-Essais: (ça devient chiant...)
-- NAVIGATOROFTHESEAS
-- LADYLARA
-- MSCGRANDIOSA
-- REGALPRINCESS
-- MSCMAGNIFICA
-- QUEENVICTORIA
-- MSCFANTASIA
-- CELIBRITYECLIPSE
-- COSTARIVIERA
-- CELEBRITYSILHOUETTE
-- CELESTYALEXPERIENCE
-- SILVERSPIRIT
-- SEVENSEASMARINER
-- CELEBRITYREFLECTION
-- WINDSTAR
-- WINDPRIDE
-- MSCMUSICA
-- BLUESTARFERRIES
-- LOUISCRUISES
-- LOUISMAJESTY
-- OCEANIARIVIERA
-- P&OOCEANA
-- NORWEGIANSPIRIT
-- Aucun des AIDA
-- MARELLACELEBRATION
-- CELESTYALCRYSTAL
+On démarre avec un png, dont une recherche inversée nous laisse comprendre que la photo a été prise à Rhodes en Grèce. Démarrant du point de prise de l'image et on naviquant via google-maps, on trouve assez rapidement le bateau en question.
 
 **PHACK{CELEBRITYINFINITY}**
 
